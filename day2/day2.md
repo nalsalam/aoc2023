@@ -36,6 +36,36 @@ tibble(game = read_lines("input1.txt")) |>
   pivot_wider(id_cols = c(game_id, draw_id), names_from = color, values_from = n, values_fill = 0)
 ```
 
+This is what the reorganized input looks like:
+
+``` r
+head(draws, n = 20)
+```
+
+    # A tibble: 20 × 5
+       game_id draw_id   red  blue green
+         <dbl>   <int> <dbl> <dbl> <dbl>
+     1       1       1     1     5    10
+     2       1       2    12     6     5
+     3       1       3     4    10     4
+     4       2       1     0     1     2
+     5       2       2     1     0     2
+     6       2       3     3     1     0
+     7       2       4     8     2     1
+     8       2       5    10     0     1
+     9       2       6    10     0     0
+    10       3       1    14     5     9
+    11       3       2     5     7     2
+    12       3       3     0     1    14
+    13       3       4     2     0     6
+    14       4       1     9     3     2
+    15       4       2     1     0     1
+    16       4       3     4     4     0
+    17       4       4    19     1     0
+    18       4       5     7     0     0
+    19       5       1     4    10     1
+    20       5       2     4     5    15
+
 The maximum draws of each color is needed.
 
 ``` r
